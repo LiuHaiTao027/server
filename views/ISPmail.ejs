@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISPmail_notice</title>
+    <style>
+        html {
+            background-color: #f0f2f5;
+            font-family: '微软雅黑', Courier, monospace;
+        }
+
+        body {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>hello, <%=item.pic%>, </h3>
+    <br>
+    <br>
+    <p>
+        您在<%=item.year%>-<%=item.month%>月的项目,
+                <span style="color: rgb(55, 28, 232);">
+                    <%=item.Operator%>
+                        (<%for(let i=0; i < item.Business_types.length;i++){%>
+                            <%=item.Business_types[i],%>
+                                <%}%>)
+                                    <%=item.paragraph_type%>
+                </span>
+                还未完成, 目前状态为<span style="color: red;">
+                    <%=item.state%>
+                </span>
+    </p>
+    <a href="http://10.62.152.203:3000/Home/ISP_Charge">追踪链接</a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p>注：目前状态为<%=item.state%>,
+            <%if(item.state==='待请款' ){%>
+                邮件发送频率为每天一次， 请尽快追踪进度！
+            <%}else if(item.state==='PR簽核中'){%>
+                邮件发送频率为每天一次， 请尽快追踪进度!
+                <%}else if(item.state==='PA簽核中'){%>
+                    邮件发送频率为每天一次， 请尽快追踪进度!
+                    <%}else if(item.state==='PA已完無發票'){%>
+                        邮件发送频率为每周两次， 请尽快追踪进度!
+                        <%}%>
+    </p>
+    <div class="line">--------------------------------------------------------------------------------</div>
+    <p>This email is automatically sent by the system, please do not reply this email directly</p>
+</body>
+
+</html>

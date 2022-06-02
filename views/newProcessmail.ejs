@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 5px 10px
+        }
+
+        thead td {
+            background-color: #316ea7;
+        }
+
+        tbody td {
+            background-color: rgb(240, 240, 240);
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Dear All,</h3>
+    <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%=item.classType%>交接如下:</p>
+    <table id="table3" border="1">
+        <thead id="th3">
+            <td>班别日期</td>
+            <td>交接日期</td>
+            <td>处理人</td>
+            <td>联络人</td>
+            <td>异常持续时间</td>
+            <td>异常事件</td>
+            <td>异常影响</td>
+            <td>异常原因</td>
+            <td>解决方案</td>
+            <td>有无停线</td>
+            <td>停线单号</td>
+        </thead>
+        <tbody id="abnormal">
+            <tr id="event">
+                <td><%= item.dutyDate%></td>
+                <td><%=item.HandoverDate%></td>
+                <td><%=item.people%></td>
+                <td><%=item.Contact%></td>
+                <td><%=item.duration%></td>
+                <td><%=item.event%></td>
+                <td><%=item.influence%></td>
+                <td><%=item.reason%></td>
+                <td><%=item.solution%></td>
+                <td><%=item.stop%></td>
+                <td><%=item.odd%></td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <br>
+        <a href="http://10.62.22.249:3000/Home/TurnList">交接记录</a>
+</body>
+
+</html>

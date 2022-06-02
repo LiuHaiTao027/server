@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 5px 10px
+        }
+
+        thead td {
+            background-color: #316ea7;
+        }
+
+        tbody td {
+            background-color: rgb(240, 240, 240);
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Dear All,</h3>
+    <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%=item.classType%>交接如下:</p>
+    <table id="table3" border="1">
+        <thead id="th3">
+            <td>交接人</td>
+            <td>交接事件</td>
+            <td>PIC</td>
+        </thead>
+        <tbody id="abnormal">
+            <%for(let i=0;i<=item.length;i++){%>
+                    <tr>
+                        <td><%=item[i].%></td>
+                    </tr>
+                <%}%>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <br>
+    <a href="http://10.62.22.249:3000/Home/TurnList">交接记录</a>
+</body>
+
+</html>
